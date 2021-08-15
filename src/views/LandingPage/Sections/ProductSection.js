@@ -18,22 +18,17 @@ const useStyles = makeStyles(styles);
 export default function ProductSection() {
   const classes = useStyles();
   return (
+    <div>
+
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Let{"'"}s talk product</h2>
-          <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
-          </h5>
+          <h2 className={classes.title}>주목할 만한 펀딩</h2>
         </GridItem>
       </GridContainer>
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={9} sm={9} md={3}>
             <InfoArea
               title="Free Chat"
               description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
@@ -42,7 +37,7 @@ export default function ProductSection() {
               vertical
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={9} sm={9} md={3}>
             <InfoArea
               title="Verified Users"
               description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
@@ -51,7 +46,52 @@ export default function ProductSection() {
               vertical
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
             <InfoArea
               title="Fingerprint"
               description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
@@ -63,5 +103,90 @@ export default function ProductSection() {
         </GridContainer>
       </div>
     </div>
+    <div className={classes.section}>
+      <GridContainer justify="center">
+        <GridItem xs={12} sm={12} md={8}>
+          <h2 className={classes.title}>주목할 만한 펀딩</h2>
+        </GridItem>
+      </GridContainer>
+      <div>
+        <GridContainer>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Free Chat"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Chat}
+              iconColor="info"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Verified Users"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={VerifiedUser}
+              iconColor="success"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+          <GridItem xs={9} sm={9} md={3}>
+            <InfoArea
+              title="Fingerprint"
+              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              icon={Fingerprint}
+              iconColor="danger"
+              vertical
+            />
+          </GridItem>
+        </GridContainer>
+      </div>
+    </div>
+    </div>
+    
   );
 }

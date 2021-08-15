@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -22,22 +22,47 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 
 import image from "assets/img/bg7.jpg";
+import axios from "axios";
 
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
-  const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+  const [cardAnimaton, setCardAnimation ] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
   const { ...rest } = props;
+  const [login,setLogin] = useState({
+    userId:"",
+    password:"",
+  })
+  const ChangeValue = (e)=>{
+    setLogin({
+      ...login,
+      [e.target.id]: e.target.value
+    });
+    console.log(login)
+  }
+  const submitLogin = (e) =>{
+    e.preventDefault();//submit이 action을 안타고 자기 할일을 그만함.
+    console.log(e)
+    fetch("http://localhost:8081/member/login",{
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json;charset=utf-8"
+      },
+      body:JSON.stringify(login)
+    }).then((res)=>res.json()).then((res)=>{
+      console.log(res);
+    });
+  }
   return (
     <div>
       <Header
         absolute
         color="transparent"
-        brand="Material Kit React"
+        brand="Crowdee"
         rightLinks={<HeaderLinks />}
         {...rest}
       />
@@ -55,7 +80,7 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <h4>Login</h4>
+                    <h4>로그인</h4>
                     <div className={classes.socialLine}>
                       <Button
                         justIcon
@@ -86,46 +111,33 @@ export default function LoginPage(props) {
                       </Button>
                     </div>
                   </CardHeader>
-                  <p className={classes.divider}>Or Be Classical</p>
+                  <p className={classes.divider}> 또는 </p>
                   <CardBody>
                     <CustomInput
-                      labelText="First Name..."
-                      id="first"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "text",
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <People className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Email..."
-                      id="email"
+                      labelText="이메일 주소 입력"
+                      id="userId"
                       formControlProps={{
                         fullWidth: true,
                       }}
                       inputProps={{
                         type: "email",
+                        onChange: ChangeValue,
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Email className={classes.inputIconsColor} />
+                            <Email className={classes.inputIconsColor}/>
                           </InputAdornment>
                         ),
                       }}
                     />
                     <CustomInput
-                      labelText="Password"
-                      id="pass"
+                      labelText="비밀번호 입력"
+                      id="password"
                       formControlProps={{
                         fullWidth: true,
                       }}
                       inputProps={{
                         type: "password",
+                        onChange: ChangeValue,
                         endAdornment: (
                           <InputAdornment position="end">
                             <Icon className={classes.inputIconsColor}>
@@ -138,8 +150,8 @@ export default function LoginPage(props) {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg">
-                      Get started
+                    <Button onClick={submitLogin} simple color="primary" size="lg">
+                      로그인
                     </Button>
                   </CardFooter>
                 </form>

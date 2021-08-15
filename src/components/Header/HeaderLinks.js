@@ -10,9 +10,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
+import People from "@material-ui/icons/People";
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+import { Apps, Book, CloudDownload, GitHub, LibraryBooks } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
@@ -51,12 +52,12 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+          href="/login-page"
           color="transparent"
-          target="_blank"
+          //target="_blank"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> Download
+          <People className={classes.inputIconsColor} />로그인/회원가입
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -66,52 +67,38 @@ export default function HeaderLinks(props) {
           </IconButton>
         </Tooltip>*/}
         <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
+          title="Access our GitHub"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
+            href="https://github.com/taehwan-jang/crowdee"
             target="_blank"
             color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
+            <GitHub className={classes.inputIconsColor} />
           </Button>
         </Tooltip>
       </ListItem>
       <ListItem className={classes.listItem}>
+        {/*<Tooltip title="Delete">
+          <IconButton aria-label="Delete">
+            <DeleteIcon />
+          </IconButton>
+        </Tooltip>*/}
         <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
+          title="Access our Notion"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
+            href="https://www.notion.so/Crowdee-5b06b66346694c938e9bb874b63100a0"
             target="_blank"
+            color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-tooltip"
-          title="Follow us on instagram"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
+            <LibraryBooks className={classes.inputIconsColor} />
           </Button>
         </Tooltip>
       </ListItem>

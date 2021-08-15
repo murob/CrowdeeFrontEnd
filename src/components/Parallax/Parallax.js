@@ -15,7 +15,7 @@ export default function Parallax(props) {
   const [index,setIndex] = useState(0)
   const indexRef = useRef(0)
 
-  const changeIndex = (index) =>{
+  const changeIndex = () =>{
     console.log("changeIndex 실행 됨")
     console.log(index)
     console.log(index)
@@ -32,11 +32,11 @@ export default function Parallax(props) {
   
   useEffect(() => {
     
-    setInterval(() => {
-      changeIndex(index)
+    setTimeout(() => {
+      changeIndex()
     }, 5000);
 
-  }, [])
+  })
 
 
   
